@@ -1,0 +1,14 @@
+.app-header{
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+.app{
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+.search-box{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}

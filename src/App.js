@@ -1,10 +1,14 @@
 import React from "react";
 import './App.css';
+import SearchBox from "./Components/SearchBox";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
+    <div className="app">
+      <div className="app-header">
+      <h4>GitHub Searcher</h4>
+      </div>
+        <SearchBox/>
     </div>
   );
 }
