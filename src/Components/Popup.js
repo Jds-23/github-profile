@@ -35,7 +35,7 @@ return(
         onClose={()=>setOpen(false)}
     >
         <div style={modalStyle} className={classes.paper}>
-           <h1> Do you want to {type==="save"?"Save":"Delete"}</h1>
+           <h3> Do you want to {type==="save"?"Save?":"Delete?"}</h3>
             <Button onClick={()=>{
                 setSavedUser((type==="save"?searchUser:undefined))
                 setOpen(false)
