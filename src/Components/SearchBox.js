@@ -1,21 +1,39 @@
 import React, {useEffect, useState} from "react";
-import {Input,Button} from "@material-ui/core";
+import {Input} from "@material-ui/core";
 import axios from "axios";
 
-const SearchBox=()=>{
+const SearchBox=({setSearchUser,setLoading,setError})=>{
     const [username,setUsername]=useState("");
 
     useEffect(()=>{
-        if(username!==""){
-            axios.get(`https://api.github.com/users/${username}`)
-                .catch(error => console.log(error))
-                .then(data => console.log(data));
-        }
+    getSearch();
+        // eslint-disable-next-line
     },[username])
+
+    const getSearch=async() =>
+    {
+        if (username !== "") {
+            try {
+                setLoading(true);
+                const response = await axios.get(`https://api.github.com/users/${username}`);
+                setSearchUser(response?.data);
+                setLoading(false);
+                setError(false);
+            } catch (e) {
+                setError(true);
+                setLoading(false);
+                setSearchUser(undefined);
+            }
+        }
+        else {
+            setError(true);
+        }
+    }
+
+
     return(
         <div className="search-box">
         <Input type={"text"} value={username} onChange={e=>setUsername(e.target.value)} placeholder={"GitHub search.."}/>
-        <Button>Save</Button>
         </div>
     )
 }

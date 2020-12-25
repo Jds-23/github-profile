@@ -1,14 +1,53 @@
 .app-header{
     padding: 20px;
-    background-color: white;
-    border-bottom: 1px solid lightgray;
+    background-color: #24292E;
+    color: #fafafa;
 }
 .app{
     background-color: #fafafa;
     min-height: 100vh;
 }
+.app-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .search-box{
     margin: 20px 0;
     display: flex;
     justify-content: center;
+}
+.user-view{
+    display: flex;
+    justify-content: center;
+}
+.user-view-card{
+    width:250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 10px;
+}
+.user-view-card>img{
+    border-radius: 50%;
+}
+.user-view-card>div{
+    width: 100%;
+}
+.user-view-ids>h3{
+    color: #586069;
+}
+.user-view-ids>p{
+    color: #8c9298;
+}
+.user-view-info{
+    margin-top: 5px;
+}
+.user-view-info>p{
+    font-size: 13px;
 }
